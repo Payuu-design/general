@@ -22,8 +22,8 @@ export async function readOne(req, res) {
             },
             [
                 'LEFT JOIN payment_settled ON payment.id = payment_settled.payment_id',
-                'LEFT JOIN user ON payment.user_id = user.id',
                 'LEFT JOIN bill ON payment.bill_id = bill.id',
+                'LEFT JOIN user ON bill.user_id = user.id',
                 'LEFT JOIN payment_concept ON bill.payment_concept_id = payment_concept.id',
                 'LEFT JOIN campus ON user.campus_id = campus.id'
             ],
@@ -85,8 +85,8 @@ export async function readMany(req, res) {
             },
             [
                 'LEFT JOIN payment_settled ON payment.id = payment_settled.payment_id',
-                'LEFT JOIN user ON payment.user_id = user.id',
                 'LEFT JOIN bill ON payment.bill_id = bill.id',
+                'LEFT JOIN user ON bill.user_id = user.id',
                 'LEFT JOIN payment_concept ON bill.payment_concept_id = payment_concept.id',
                 'LEFT JOIN campus ON user.campus_id = campus.id'
             ],
