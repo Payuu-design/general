@@ -28,7 +28,6 @@ app.get('/ping', async (_, res) => {
         console.log(err);
         res.status(500).json({ message: 'Cannot connect to DB' });
     }
-
 });
 app.use(routes);
 app.post('/api-gateway', async (_, res) => {
